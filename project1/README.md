@@ -24,6 +24,7 @@ Sample Record :
 
 
 ## Schema design and ETL pipeline
+![](schema.png?raw=true)
 
 #### Fact Table 
 **songplays** - records in log data associated with song plays i.e. records with page `NextSong`
@@ -50,7 +51,6 @@ artist_id, name, location, latitude, longitude
 start_time, hour, day, week, month, year, weekday
 ```
 
-![](schema.png?raw=true)
 
 ## Project Files
 
