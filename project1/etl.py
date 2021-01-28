@@ -24,7 +24,7 @@ def process_song_file(cur, filepath):
         # insert song record
         cur.execute(song_table_insert, song_data)
 
-    print(f"Records inserted for file {filepath}")
+    print(f"Records inserted for song file {filepath}")
 
 def process_log_file(cur, filepath):
     """
@@ -43,7 +43,7 @@ def process_log_file(cur, filepath):
     df['ts'] = pd.to_datetime(df['ts'], unit='ms')
     
     # insert time data records
-    time_data = list((t, t.dt.hour, t.dt.day, t.dt.weekofyear, t.dt.month, t.dt.year, t.dt.weekday))
+    time_data = list((t, t.dt.hour, t.dt.day, t.dt.isocalendar().week, t.dt.month, t.dt.year, t.dt.weekday))
     column_labels = list(('start_time', 'hour', 'day', 'week', 'month', 'year', 'weekday'))
     time_df =  pd.DataFrame.from_dict(dict(zip(column_labels, time_data)))
 
@@ -73,7 +73,7 @@ def process_log_file(cur, filepath):
         songplay_data = (index, row.ts, row.userId, row.level, songid, artistid, row.sessionId,\
                      row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
-
+    print(f"Records inserted for log file {filepath}")
 
 def process_data(cur, conn, filepath, func):
     # get all files matching extension from directory
