@@ -7,7 +7,7 @@ In this project, we apply Data Modeling with Postgres and build an ETL pipeline 
 
 Link: [Data_Modeling_with_Postgres]
 
-## Project 2: [NoSQL Databases - Data Modeling with Apache Cassandra](https://github.com/DanielBBZ/UdacityDataEngineering/tree/main/project2).
+## [Project 2: NoSQL Databases - Data Modeling with Apache Cassandra](https://github.com/DanielBBZ/UdacityDataEngineering/tree/main/project2).
 Designed a NoSQL database using Apache Cassandra based on the original schema outlined in project one. Skills include:
 * Created a nosql database using Apache Cassandra
 * Developed denormalized tables optimized for a specific set queries and business needs
